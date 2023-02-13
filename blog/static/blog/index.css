@@ -40,6 +40,13 @@
   width: 60rem;
   margin: -6rem auto 2rem auto;
   box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.4);
+  
+  
+}
+
+#latest-posts a {
+  text-decoration: none;
+  color: #222;
 }
 
 #latest-posts h2 {
@@ -52,6 +59,7 @@
   padding: 0;
   display: flex;
   gap: 1rem;
+  justify-content: center;
 }
 
 #latest-posts li {
@@ -72,4 +80,17 @@
 #about p {
   font-size: 1.5rem;
   color: #353535;
+}
+
+.post__content {
+  text-align: center;
+}
+
+#mountain {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  align-items: center;
+  margin:  0 auto;
+  display: flex;
 }

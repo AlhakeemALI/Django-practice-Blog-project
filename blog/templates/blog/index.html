@@ -3,51 +3,31 @@
 
  {% block title  %} My Blog {% endblock  %}
  {% block css_files %}  
- <link rel="stylesheet" href="{% static 'blog/index.css' %}" >
+ <link rel="stylesheet" href="{% static 'blog/post.css' %}" />
+ <link rel="stylesheet" href="{% static 'blog/index.css' %}" />
  {% endblock  %}
  {% block content %} 
- <header id="main-navigation">
-  <h1> <a href="">Ali's Blog</a></h1>
-  <nav>
-    <a href="">All Posts</a>
-  </nav>
- </header>
-
- <section id="welcome">
-  <header>
-    <img src="" alt="Ali - The Authot Of This Blog" />
-    <h2> Ali's Blog</h2>
-  </header>
-  <p> Hi, I am Ali and i love to blog about tech and the world!</P>
- </section>
+  <section id="welcome">
+      <header>
+        <img src="{% static 'blog/images/ali.jpeg' %}" alt="Ali - The Authot Of This Blog" />
+        <h2> Ali's Blog</h2>
+      </header>
+      <p> Hi, I am Ali and i love to blog about tech and the world!</P>
+  </section>
 
  <section id="latest-posts">
-
-    <h2>My Latest Thouhts</h2>
+    <h2>My Latest Thoughts</h2>
       <ul>
-          <li>
-              <article>
-                <a href="">
-                  <img src="" alt="Mountain Hiking" />
-                  <div class="post__content">
-                    <h3>Mountain Hiking</h3>
-                    <p>
-                      It looked as it would seem in a storybook. The sights, the sounds, the smells and the tastes were out of the world. The sky, punched with clouds stretching like a dome. I could smell the caramel in the air and the music of the meadow echoed in my ears!
-                    </p>
-
-                  </div>
-                </a>
-               </artical>
-          </li>
+          {% include 'blog/includes/post.html'  %}
       </ul>
  </section>
  <section id="about">
-    <h2>What I Do</h2>
-      <p>
-      Analyze users' needs and then design, test, and develop software to meet those needs
-       </p>
-      <p>
-      My goal is to keep on growing as a developer - and if I could help you do the same, I'd be very happy!
-      </p>
- </section>
+          <h2>What I Do</h2>
+            <p>
+                Analyze users' needs and then design, test, and develop software to meet those needs
+            </p>
+            <p>
+              My goal is to keep on growing as a developer - and if I could help you do the same, I'd be very happy!
+          </p>
+  </section>
   {% endblock%}
