@@ -78,3 +78,15 @@ main {
   margin:  0 auto;
   display: flex;
 }
+
+.post-details {
+  isplay: flex;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    line-height: 25px
+    ;
+}
