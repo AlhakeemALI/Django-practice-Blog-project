@@ -29,17 +29,17 @@ class Post(models.Model):
     date = models.DateField(auto_now=True)
     content = models.TextField(validators=[MinLengthValidator(10)])
     slug= models.SlugField(unique=True, db_index=True)
-    author = models.ForeignKey(Author, on_delete=models.SET_NULL, related_name="posts")
+    author = models.ForeignKey(Author, on_delete=models.SET_NULL, related_name="posts", null=True)
     tags = models.ManyToManyField(Tag)
 
 
-def get_absolute_url(self):
-    return reverse("post-detail", args=[self.slug])
+# def get_absolute_url(self):
+#     return reverse("post-detail", args=[self.slug])
 
-def save(self, *args, **kwargs):
-     self.slug = slugify(self.title)
-     super().save(*args, **kwargs)
+# def save(self, *args, **kwargs):
+#      self.slug = slugify(self.title)
+#      super().save(*args, **kwargs)
 
-def __str__(self):
-    return f"{self.tile} "
+# def __str__(self):
+#     return f"{self.tile} "
 
