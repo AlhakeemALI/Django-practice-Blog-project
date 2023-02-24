@@ -4,12 +4,15 @@ from .models import Author, Post,Tag
 # Register your models here.
 
 class PostAdmin(admin.ModelAdmin):
-    list_filter = ("title", "date",)
-    list_display = ("title",)
+    list_filter = ("title", "date","tags", "author",)
+    list_display = ("title","date", "author",)
+    prepopulated_fields = {"slug": ("title",)}
 
 
 class AuthoAdmin(admin.ModelAdmin):
        list_filter = ("first_name",)
+
+      
 
 
 
