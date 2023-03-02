@@ -29,10 +29,15 @@
   </section>
   <main>
        <p class="post-details">
-        {{ singel_post.content}}
+        {{ singel_post.content  | linebreaks}}
        </p>
-      
   </main>
-
+    <div>
+        <form>
+             {% csrf_token %}
+             {{ comment_form }}
+             <button> Save Comment </button>
+        </form>   
+    </div>
 
    {% endblock%}
