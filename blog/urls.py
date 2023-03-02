@@ -5,7 +5,7 @@ from  django.conf import  settings
 
 
 urlpatterns = [
-     path("", views.starting_page, name="starting-page"),
-     path("posts", views.posts, name="posts-page"),
-     path("posts/<slug:slug>", views.post_detail, name="post-detail")
+     path("", views.StartingPageView.as_view(), name="starting-page"),
+     path("posts", views.AllPostView.as_view(), name="posts-page"),
+     path("posts/<slug:slug>",views.PostDetailView.as_view(), name="post-detail")
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
