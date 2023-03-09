@@ -29,9 +29,9 @@ class AllPostView(ListView):
        context_object_name = "all_posts"
 
 class PostDetailView(View):
-      # template_name =  "blog/post-ditail.html"
-      # model = Post
-      # context_object_name = "singel_post"
+      template_name =  "blog/post-ditail.html"
+      model = Post
+      context_object_name = "singel_post"
 
       def get(self,request,slug):
           post= Post.objects.get(slug=slug)
