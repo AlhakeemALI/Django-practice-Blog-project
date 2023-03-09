@@ -39,8 +39,7 @@ class PostDetailView(View):
                "post": post,
                "tags": post.tags.all(),
                "comment_form": CommentForm()
-                
-
+            
           }
           return render(request, "blog/post-ditail.html", context)
          
