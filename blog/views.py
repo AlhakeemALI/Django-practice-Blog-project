@@ -28,20 +28,21 @@ class AllPostView(ListView):
        ordering = ["-date"]
        context_object_name = "all_posts"
 
+
+
+
 class PostDetailView(View):
-      template_name =  "blog/post-ditail.html"
-      model = Post
-      context_object_name = "singel_post"
+
 
       def get(self,request,slug):
           post= Post.objects.get(slug=slug)
           context = {
-               "post": post,
+               "singel_post": post,
                "tags": post.tags.all(),
                "comment_form": CommentForm()
             
           }
-          return render(request, "blog/post-ditail.html", context)
+          return render(request, "blog/post-detail.html", context)
          
       def post(self,request,slug):
          comment_form = CommentForm(request.POST)
@@ -51,13 +52,12 @@ class PostDetailView(View):
              comment.post = post
              comment.save()
              return HttpResponseRedirect(reverse("post-detail", args=[slug]))
-         post= Post.objects.get(slug=slug)
          context = {
-               "post": post,
+               "singel_post": post,
                "tags": post.tags.all(),
                "comment_form": CommentForm()
          }
-         return render(request, "blog/post-ditail.html", context)
+         return render(request, "blog/post-detail.html", context)
          
 
 

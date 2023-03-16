@@ -32,10 +32,10 @@
         {{ singel_post.content  | linebreaks}}
        </p>
   </main>
-python
+
         <section  id="comment-form">
             <h1>Your Comment</h1>
-        <form action=" {% url 'post-detail' singel_post.slug %}" method="POST">
+        <form action="{% url "post-detail" singel_post.slug %}" method="POST">
               {% csrf_token %}
             {% for form_field in comment_form %}
                   <div class="form-control">
